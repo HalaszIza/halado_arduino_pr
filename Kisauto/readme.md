@@ -1,8 +1,7 @@
 # Vonalkövető kisautó
 
 ![Feladat kiírás:](kisauto.png)
-> Linkek:  
-> https://github.com/HalaszIza/halado_arduino_pr/  
+> Linkek:    
 > https://docs.keyestudio.com/projects/KS0522/en/latest/
 
 ## Feladat leírása:
