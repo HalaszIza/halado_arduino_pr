@@ -108,3 +108,24 @@ void loop(){
 
 ## Servo motor
 
+**Leírás:**
+
+**Kapcsolási rajz:**
+
+![Kapcsolási rajz_3](kapcs_3.png)
+
+**Példakód:**
+``` cpp
+
+```
+
+# A végleges rendszer
+
+**Leírás:**
+
+**Kapcsolási rajz:**
+
+![Kapcsolási rajz_4](kapcs_4.png)
+
+
+# Extra feladat:
