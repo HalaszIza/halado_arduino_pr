@@ -4,8 +4,7 @@
 
 ## Közlekedési lámpa 🚥🚦
 
-**📘 Leírás:**  
-A mikrokontroller tanulása során gyakran használnak három LED-et – piros 🔴, zöld 🟢 és sárga 🟡 fényeket – a közlekedési lámpa villogásának szimulálására külső kapcsolatokkal.  
+**📘 Leírás:** A mikrokontroller tanulása során gyakran használnak három LED-et – piros 🔴, zöld 🟢 és sárga 🟡 fényeket – a közlekedési lámpa villogásának szimulálására külső kapcsolatokkal.  
 
 Ezúttal egy különleges modult terveztünk, amely nagyon kényelmes a bekötés szempontjából, és a modulon megtalálható a piros 🔴, sárga 🟡 és zöld 🟢 LED is.  
 
@@ -54,8 +53,7 @@ digitalWrite(redled, LOW);// turn off red LED
 
 ## Gomb 🔘
 
-**📘 Leírás:**
-Ez egy alap nyomógomb modul 🟠. Egyszerűen bedugható egy IO shield-be, így ideális az első Arduino próbálkozásokhoz 🤖.
+**📘 Leírás:** Ez egy alap nyomógomb modul 🟠. Egyszerűen bedugható egy IO shield-be, így ideális az első Arduino próbálkozásokhoz 🤖.
 
 **✨ Jellemzők:**
 - Széles feszültségtartomány: 3.3V – 5V 🔋
