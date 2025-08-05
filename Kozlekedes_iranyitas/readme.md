@@ -175,12 +175,20 @@ servopulse(servopin,val);// use the pulse function
 
 # A végleges rendszer
 
-**Leírás:** Hozz létre egy rendszert, ami képes irányítani lámpát 🏮, lámpa párokat 🔴🟢 és egy klassz sorompót 🚧
+🛠️ Feladat: Egy vasúti átkelőhely működését modellezzük két közlekedési lámpa, egy sorompó és egy vonat érkezését/távozását figyelő gombok segítségével. A rendszer standby üzemmóddal is rendelkezik, amely jelzi a rendszerszünetet.
 
-🛠️ Eszközök, amikre szükséged lesz:
-- Lámpák 🏮 ( ebből lehet 1-2 db attól függően, mennyire összetett )
-- Gomb 🔘
-- Micro servo 9g motor 🔧
+🔹 Rendszer elemei:
+- 🚥 Két közlekedési lámpa (váltakozó működéssel).
+- 🚧 Sorompó szervomotorral vezérelve.
+- 🚆 Vonat érkezése és távozása gombnyomásra.
+- 🔄 Standby mód, amely sárga villogással jelzi a rendszerszünetet.
+
+🚀 Program működése:
+- Standby mód 🟡 – A gomb megnyomásával a sárga lámpák villognak, és a rendszer megáll.
+- Vonat érkezése 🚆 – A gomb megnyomásával a sorompó leereszkedik.
+- Vonat távozása 🚄 – A másik gombbal a sorompó felemelkedik.
+- Lámpák váltakozása 🚥 – Az egyik lámpa piros, a másik zöld, majd 4 másodpercenként cserélnek.
+- Automatikus időzítés ⏳ – millis() segítségével történik, így nincs delay() blokkolás.
 
 **Kapcsolási rajz:**
 
@@ -188,3 +196,13 @@ servopulse(servopin,val);// use the pulse function
 
 
 # Extra feladat:
+
+🚀 Extra feladat 💡🔧 Ha elkészült az alap projekt, és van kedved feltúrbózni, itt egy gondolkodós kihívás! 🤔
+
+💡 Adott egy lámpapárral 🔴🟢 és sorompóval 🚧 létrehozott rendszer. Bővítsd ki a rendszert úgy, hogy minden automatikusan működjön, emberi beavatkozás nélkül! 🔄
+
+✅ Gombok nélküli működés 🔘❌: Az érkezés és távozás gombok nélkül is történjen meg, időzítés alapján. ✅ Sorompó intelligens mozgása 🚧 – Ha a lámpák pirosra váltanak, a sorompó automatikusan lecsukódjon. ✅ Villogó jelzés 🔴🟢 – A sárga lámpák automatikusan villogjanak, amikor a rendszer standby-ban van. ✅ Teljes ciklikus rendszer ⏳ – A lámpák és a sorompó folyamatosan váltakozzanak egy előre meghatározott algoritmus szerint.
+
+Extra nehézítés: 💭 Sorompó sebességvezérlés: Ha a piros lámpák villognak, a sorompó lassabban csukódjon le, majd stabilan záródjon. 🚀
+
+✅ Sok sikert! 😊
