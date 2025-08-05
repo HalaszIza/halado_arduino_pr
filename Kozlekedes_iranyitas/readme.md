@@ -194,7 +194,6 @@ servopulse(servopin,val);// use the pulse function
 
 ![Kapcsolási rajz_4](kapcs_4.png)
 
-
 # Extra feladat:
 
 🚀 Extra feladat 💡🔧 Ha elkészült az alap projekt, és van kedved feltúrbózni, itt egy gondolkodós kihívás! 🤔
