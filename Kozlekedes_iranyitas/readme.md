@@ -30,9 +30,9 @@ Ez a modul teljes mértékben kompatibilis az Arduino mikrokontrollerrel 🤖 é
 **Példakód:**
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-int redled =5; // initialize digital pin 5.
-int yellowled =4; // initialize digital pin 4.
-int greenled =3; // initialize digital pin 3.
+int redled = 10; // initialize digital pin 10.
+int yellowled = 9; // initialize digital pin 9.
+int greenled = 8; // initialize digital pin 8.
 void setup()
 {
 pinMode(redled, OUTPUT);// set the pin with red LED as “output”
