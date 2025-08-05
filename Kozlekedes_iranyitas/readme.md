@@ -94,15 +94,21 @@ int yellowled = 9; // initialize digital pin 9.
 int greenled = 8; // initialize digital pin 8.
 int inputPin = 5;               // Connect sensor to input pin 5
 void setup() {
-  pinMode(ledPin, OUTPUT);      // set LED as output
+  pinMode(redled, OUTPUT);      // set LED as output
+  pinMode(yellowled, OUTPUT);
+  pinMode(greenled, OUTPUT);
   pinMode(inputPin, INPUT);     // set pushbutton as input
 }
 void loop(){
   int val = digitalRead(inputPin);  // read input value
   if (val == HIGH) {            // check if the input is HIGH
-    digitalWrite(ledPin, LOW);  // turn LED OFF
+    digitalWrite(redled, LOW);  // turn LED OFF
+    digitalWrite(yellowled, LOW);
+    digitalWrite(greenled, LOW);
   } else {
-    digitalWrite(ledPin, HIGH); // turn LED ON
+    digitalWrite(redled, HIGH); // turn LED ON
+    digitalWrite(yellowled, HIGH);
+    digitalWrite(greenled, HIGH);
   }
 }
 ////////////////////////////////////////////////////////////////////
