@@ -87,10 +87,12 @@ Ez egy alap nyomógomb modul 🟠. Egyszerűen bedugható egy IO shield-be, így
 **Példakód:**
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-/* # When you push the digital button, the Led 13 on the board will be turned on. Otherwise,the led is turned off.
+/* # When you push the digital button, the Led on the board will be turned on. Otherwise,the led is turned off.
 */
-int ledPin = 13;                // choose the pin for the LED
-int inputPin = 3;               // Connect sensor to input pin 3 
+int redled = 10; // initialize digital pin 10.
+int yellowled = 9; // initialize digital pin 9.
+int greenled = 8; // initialize digital pin 8.
+int inputPin = 5;               // Connect sensor to input pin 5
 void setup() {
   pinMode(ledPin, OUTPUT);      // set LED as output
   pinMode(inputPin, INPUT);     // set pushbutton as input
