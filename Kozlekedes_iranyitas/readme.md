@@ -173,6 +173,7 @@ void loop() {
 **Kapcsolási rajz:**
 
 ![Kapcsolási rajz_4](kapcs_4.png)
+> Egy kis segítség. Használj switch case-t a lámpák színeinek állapotának változásához.
 
 # Extra feladat:
 
@@ -180,8 +181,22 @@ void loop() {
 
 💡 Adott egy lámpapárral 🔴🟢 és sorompóval 🚧 létrehozott rendszer. Bővítsd ki a rendszert úgy, hogy minden automatikusan működjön, emberi beavatkozás nélkül! 🔄
 
-✅ Gombok nélküli működés 🔘❌: Az érkezés és távozás gombok nélkül is történjen meg, időzítés alapján. ✅ Sorompó intelligens mozgása 🚧 – Ha a lámpák pirosra váltanak, a sorompó automatikusan lecsukódjon. ✅ Villogó jelzés 🔴🟢 – A sárga lámpák automatikusan villogjanak, amikor a rendszer standby-ban van. ✅ Teljes ciklikus rendszer ⏳ – A lámpák és a sorompó folyamatosan váltakozzanak egy előre meghatározott algoritmus szerint.
+**Interaktív LED & szervó 🎛️**
+Cél: A meglévő 3 gomb és a szervó használatával készíts interaktív rendszert, ahol a LED-ek és a szervó együtt reagálnak.
 
-Extra nehézítés: 💭 Sorompó sebességvezérlés: Ha a piros lámpák villognak, a sorompó lassabban csukódjon le, majd stabilan záródjon. 🚀
+Alpontok:
+- Gomb 1 – LED-mód 🟡
+Nyomva tartva a LED szekvencia leáll, és a sárga LED folyamatosan világít.
+Felengedéskor a szekvencia újraindul.
+
+- Gomb 2 – Szervó előre ↗️
+A szervó 0° → 180°, blokkolásmentesen, a LED-ek tovább működnek.
+
+- Gomb 3 – Szervó vissza ↘️
+A szervó 180° → 0°, blokkolásmentesen.
+Ha mindkét gomb egyszerre nyomva, a szervó nem mozdul, LED-ek tovább futnak.
+
+- Extra kihívás ⚡
+A LED szekvencia sebessége a gomb nyomásának hosszától függjön (hosszabb nyomás → gyorsabb LED-ek).
 
 ✅ Sok sikert! 😊
