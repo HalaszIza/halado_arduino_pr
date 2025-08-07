@@ -57,3 +57,88 @@ void loop()
 ```
 
 ### OSOYOO szenzor működése
+
+📦 Áttekintés – OSOYOO 5-csatornás IR követőszenzor  
+Az OSOYOO 5-csatornás IR vonalkövető szenzor egy olyan modul, amely öt infravörös (IR) érzékelőt tartalmaz, és digitális bitekként olvassa azokat. 🔍
+
+Ez a szenzor alkalmas összetett környezetekhez is:  
+🔧 A beépített érzékenység-szabályzó potenciométerrel állítható a kioldási küszöb, az aktuális körülményekhez igazítva.
+📏 Az 5 csatornás IR érzékelő egyszerre képes érzékelni:
+- a középső követési vonalat,
+- valamint a bal és jobb széleket is.
+
+🛠️ A szenzort csavarokkal és réz- vagy szegecskötéssel könnyedén felszerelhetjük egy okosautóra, így nagy pontosságú vonalkövetés valósítható meg.
+
+💡 Működési elv  
+Ez az IR szenzor ITR9909 érzékelőket használ a színek és távolság észleléséhez.  
+
+🔁 Az elv a következő:
+Az infravörös fény különböző mértékben verődik vissza a felületekről:
+- a fehér szín visszaveri a fényt 🤍,
+- a fekete elnyeli azt ⚫.
+
+Az eszköz a visszavert fény erősségét alakítja át áramjellé, így tudja érzékelni a felületet.
+
+- 📍 Fehér felület esetén: magas (HIGH) szintet érzékel
+- 📍 Fekete felület esetén: alacsony (LOW) szintet érzékel
+- 🔎 Érzékelési magasság: 0–3 cm
+
+A panelen három ITR9909 csoport található, így a bekötés és vezérlés is egyszerűbb.
+🛠️ A potenciométer tekerésével állíthatod a szenzor érzékenységét:
+- 👉 az óramutató járásával megegyezően növeled,
+- 👉 ellenkező irányban csökkented.
+
+⚙️ Hardverfelépítés
+Az érzékelőpanel (PCB) fontosabb részei:
+- IR adó-vevők (ITR9909) – kibocsátják és érzékelik az infravörös sugárzást 🔦
+- Tápellátás jelző LED – ha 5V/3.3V tápfeszültséget kap, világít 🔋💡
+- Működési visszajelző LED-ek – ha fekete felületet észlel (LOW jel), a piros LED világít, és az OUT láb LOW szintet ad 🔴
+- Érzékenység-potenciométer – tekerhető, beállítható vele az érzékelési távolság
+- 74HC14D chip – egy Schmitt-trigger bemenetű hatos inverter, ami segít a gyenge bemeneti jeleket tisztán, digitálisan értelmezhető jellé alakítani
+
+Kimeneti interfészek –
+- VCC: 5V vagy 3.3V
+- GND: földelés
+- IR1-IR5: digitális I/O jelek
+- Rögzítő furat – az érzékelő stabil rögzítéséhez 🔩
+
+📐 Főbb jellemzők
+- 🔌 Működési feszültség: 3.3–5V DC
+- 🔍 5-csatornás érzékelő, egy vonalban elhelyezve
+- 📏 Digitális, tiszta kimenet (LOW szint, ha észlel)
+- ⚫ Kifejezetten érzékeny sötét felületre (fekete)
+- 💡 Beépített LED-ek visszajelzéshez
+- 🛠️ Állítható érzékenység (potenciométerrel)
+- 📶 TTL-szintű digitális jelek
+- 📏 Érzékelési magasság: 0–3 cm
+- 🔧 M3 méretű rögzítési lehetőség (rugalmasan szerelhető)
+
+🧠 Mi az elv a vonalkövető robot mögött?
+A vonalkövető robot működése a fény és színek viselkedésén alapul.
+🌈 Tudnod kell:
+- a fehér felület visszaveri,
+- a fekete felület elnyeli az infravörös fényt.
+
+Ezt a különbséget használjuk ki a robot irányításához. 🤖
+
+⚙️ Hogyan működik?
+Ebben a projektben két IR érzékelő modult használunk – egyet balra, egyet jobbra:
+- 🤍 Ha mindkét szenzor fehér felületet érzékel → a robot egyenesen előre halad.
+- ⚫ Ha a bal érzékelő fekete vonalra ér → a robot balra fordul.
+- ⚫ Ha a jobb érzékelő fekete vonalra ér → a robot jobbra fordul.
+- 🤍 Ha újra fehér felületet érzékelnek → a robot tovább halad előre.
+- ⚫⚫ Ha mindkét szenzor fekete vonalat észlel → a robot megáll. 🛑
+
+🚗 Alkalmazások
+Ez a típusú IR szenzor széles körben használt:
+- 🧭 akadálykerülő robotokban,
+- 🚘 okosautókban,
+- 🏭 gyártósoros számlálásban,
+- 🛤️ fekete-fehér vonalkövetéshez.
+
+---
+> Illetve innen kicsit részletesebben tudsz tájékozódni a szenzor és az autó működéséről:
+> https://osoyoo.com/2022/07/05/v2-metal-chassis-mecanum-wheel-robotic-for-arduino-mega2560-lesson3-5-point-line-tracking/
+---
+Egy kis segítség, ha esetleg nagyon elakadnátok:  
+https://github.com/sribence/GAMF_Arduino/tree/main/Kisauto
