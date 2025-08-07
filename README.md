@@ -39,3 +39,10 @@ Ahogy elterjedt a szélesebb közösségben is, az Arduino panelek fejlődni kez
 
 egészen sokféle felhasználásra elérhetőek lettek az Arduino eszközök.
 
+
+
+---
+Az alábbi linken pedig még több videót talász az arduino alapjairól:  
+https://www.youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP
+
+
