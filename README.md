@@ -89,5 +89,9 @@ digitalWrite(13, HIGH); // Bekapcsolja a LED-et a 13-as lábon
 - másoknak, akik megnézik vagy használják a kódod.
 
 ---
+Itt pedig még részletesebben megtalálsz mindent a témában kapcsolatban:  
+https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/?_gl=1*hlw4c8*_up*MQ..*_ga*MTY2NjIyNzEzNy4xNzU0NTc0ODQ5*_ga_NEXN8H46L5*czE3NTQ1ODkxMjgkbzIkZzEkdDE3NTQ1ODk5MzckajYwJGwwJGg1MDkwMjM1MTY.
+
+---
 Az alábbi linken pedig még több videót talász az arduino alapjairól:  
 https://www.youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP
