@@ -2,6 +2,9 @@
 
 ![Feladat leírás](kozlekedes_iranyitas.png)
 
+> Linkek: https://docs.keyestudio.com/projects/KS0522/en/latest/KS0522.html#projects
+
+---
 ## Közlekedési lámpa 🚥🚦
 
 **📘 Leírás:** A mikrokontroller tanulása során gyakran használnak három LED-et – piros 🔴, zöld 🟢 és sárga 🟡 fényeket – a közlekedési lámpa villogásának szimulálására külső kapcsolatokkal.  
