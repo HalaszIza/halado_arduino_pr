@@ -1,1 +1,6 @@
+# OkosOtthon
 
+![Plakát](okosotthon.png)
+
+> 
+---
