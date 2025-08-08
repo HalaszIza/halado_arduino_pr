@@ -7,50 +7,38 @@
 ---
 ## Csipogó
 
-Leírás 📄   
-Az Arduino segítségével sokféle interaktív alkotást készíthetünk, melyek közül az egyik leggyakrabban használt az akusztikai-optikai megjelenítés 🔊💡. Az ebben a kísérletben használt áramkör képes hangot előállítani 🎶.
+Leírás 🔊  
+Ez az egyik legegyszerűbb hangkeltő modul 🧩, amelyet könnyedén vezérelhetsz magas (HIGH) vagy alacsony (LOW) jelszinttel ⚡. A kimeneti frekvencia változtatásával különböző hangokat tudsz létrehozni 🎶.
 
-Általában a kísérlethez piezo hangszórót (buzzer) vagy hangszórót használunk, de a buzzer egyszerűbb és könnyebben kezelhető ✅.
+Ez a modul széles körben elterjedt a mindennapi eszközeinkben, például számítógépekben 🖥️, hűtőszekrényekben 🧊, telefonokban 📱 és sok más készülékben.
 
-A jelen esetben bemutatott buzzer egy passzív típusú 🔌. Ez önmagában nem tud működni, külső impulzusfrekvenciákra van szüksége az aktiváláshoz 📈. Különböző frekvenciák különböző hangokat eredményeznek 🎵. Az Arduinóval akár egy dallamot is le tudsz programozni, ami szórakoztató és egyszerű élményt nyújt 😄🎼.
+Emellett rengeteg izgalmas, interaktív projektet is készíthetsz ezzel a kis, de hasznos eszközzel 🤖🎮. Próbáld ki, és garantáltan lenyűgöz majd az általa keltett elektronikus hang! 🧠✨
 
 Specifikáció ⚙️
 - Működési feszültség: 3.3–5V ⚡
 - Interfész típusa: digitális 💻
-- Méret: 30×20 mm 📏
+- Méret: 30 × 20 mm 📏
 - Tömeg: 4 g ⚖️
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_1](kapcs_1.png)
 
 Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-int buzzer= ;//set digital IO pin of the buzzer
+int buzzPin = 4;  // Buzzer csatlakoztatva a 4-as digitális pinre
 
-void setup() 
-{ 
-  pinMode(buzzer,OUTPUT);  // set digital IO pin pattern, OUTPUT to be output 
+void setup() {
+  // Nincs szükség pinMode beállításra a tone() használatakor
 }
 
-void loop() 
-{
-  unsigned char i,j;  //define variable
-
-  while(1)
-  {
-    for(i=0;i<80;i++)  // output a frequency sound
-      {
-        digitalWrite(buzzer,HIGH);  // sound
-        delay(1);  //delay1ms 
-        digitalWrite(buzzer,LOW);  //not sound
-        delay(1);  //ms delay 
-      } 
-      for(i=0;i<100;i++)  // output a frequency sound
-        { 
-          digitalWrite(buzzer,HIGH);  // sound
-          digitalWrite(buzzer,LOW);  //not sound
-          delay(2);  //2ms delay 
-        }
-  } 
-} 
+void loop() {
+  tone(buzzPin, 1000);  // 1000 Hz-es hangot játszik (kb. középtartomány)
+  delay(500);           // fél másodpercig szól
+  noTone(buzzPin);      // hang leállítása
+  delay(500);           // fél másodperc szünet
+}
 ////////////////////////////////////////////////////////////////////
 ```
 ## Mozgásérzékelő
