@@ -20,6 +20,7 @@ Specifikáció ⚙️
 - Méret: 30×20 mm 📏
 - Tömeg: 4 g ⚖️
 
+Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
 int buzzer= ;//set digital IO pin of the buzzer
@@ -54,7 +55,50 @@ void loop()
 ```
 ## Mozgásérzékelő
 
+Leírás 🕵️‍♂️  
+A piroelektromos infravörös mozgásérzékelő képes érzékelni az emberi vagy állati mozgásból származó infravörös jeleket 🧍🐕🌡️, és kapcsolójelet ad ki (HIGH vagy LOW) ⚡.
 
+Széles körben alkalmazható olyan helyeken, ahol emberi mozgás érzékelésére van szükség 🏠🚪🔐.
+
+A hagyományos piroelektromos szenzorok általában nagyobb méretűek, mivel szükséges hozzájuk külön érzékelő, speciális chip és bonyolult perifériás áramkörök 🧩🔌, így megbízhatóságuk is alacsonyabb lehet.
+
+Ez az új piroelektromos mozgásérzékelő kifejezetten Arduinohoz lett tervezve 🤖📦. Beépített digitális érzékelőt használ, kisebb mérettel, nagyobb megbízhatósággal ✅, alacsonyabb energiafogyasztással 🔋, és egyszerűbb áramköri kialakítással 🧠.
+
+Specifikáció ⚙️
+- Bemeneti feszültség: 3.3V – 5V (max: 6V) ⚡
+- Működési áram: 15 μA 🔌
+- Üzemi hőmérséklet: -20 ℃ – 85 ℃ ❄️🔥
+- Kimeneti feszültség: HIGH = 3V, LOW = 0V 🔄
+- Kimeneti késleltetés (HIGH szint): kb. 2.3–3 másodperc ⏱️
+- Érzékelési szög: 100° 🧭
+- Érzékelési távolság: akár 7 méter 📏
+- Kimeneti LED-jelző: világít, ha a kimenet HIGH 💡
+- Lábankénti áramkorlát: max. 100 mA ⚠️
+- Méret: 30 × 20 mm 📐
+- Tömeg: 4 g ⚖️
+
+Példakód:
+``` cpp
+////////////////////////////////////////////////////////////////////
+byte sensorPin = 3;
+byte indicator = 13;
+void setup()
+{
+  pinMode(sensorPin,INPUT);
+  pinMode(indicator,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  byte state = digitalRead(sensorPin);
+  digitalWrite(indicator,state);
+  if(state == 1)Serial.println("Somebody is in this area!");
+  else if(state == 0)Serial.println("No one!");
+  delay(500);
+}
+////////////////////////////////////////////////////////////////////
+```
 
 ## Füstérzékelő
 
@@ -72,6 +116,7 @@ Specifikáció ⚙️
 - Méret: 44 × 16,7 mm 📐
 - Tömeg: 4 g ⚖️
 
+Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
 const int flamePin = 2;     // the number of the flame pin
@@ -103,3 +148,7 @@ State = digitalRead(flamePin);
 ```
 
 ## Kijelző
+
+
+
+
