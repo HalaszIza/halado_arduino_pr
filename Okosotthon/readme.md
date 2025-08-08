@@ -27,7 +27,7 @@ Kapcsolási rajz:
 Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-int buzzPin = 4;  // Buzzer csatlakoztatva a 4-as digitális pinre
+int buzzPin = 3;  // Buzzer csatlakoztatva a 3-as digitális pinre
 
 void setup() {
   // Nincs szükség pinMode beállításra a tone() használatakor
