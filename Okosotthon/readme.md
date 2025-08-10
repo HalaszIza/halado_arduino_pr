@@ -115,22 +115,39 @@ Specifikáció ⚙️
 Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-byte sensorPin = 3;
+int redpin = 13;   // Piros LED a 13-as lábra kötve
+int greenpin = 12; // Zöld LED a 12-es lábra kötve
+byte sensorPin = 4;
 byte indicator = 13;
-void setup()
-{
+
+void setup() {
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
   pinMode(sensorPin,INPUT);
   pinMode(indicator,OUTPUT);
   Serial.begin(9600);
 }
 
-void loop()
+void loop() 
 {
   byte state = digitalRead(sensorPin);
   digitalWrite(indicator,state);
-  if(state == 1)Serial.println("Somebody is in this area!");
-  else if(state == 0)Serial.println("No one!");
-  delay(500);
+
+  if(state == 1)
+  {
+    Serial.println("Somebody is in this area!");
+    digitalWrite(redpin, LOW);   
+    digitalWrite(greenpin, HIGH);
+    delay(1000); 
+  }
+ 
+  else if(state == 0)
+  {
+    Serial.println("No one!");
+    digitalWrite(redpin, HIGH);
+    digitalWrite(greenpin, LOW); 
+    delay(1000); 
+  }
 }
 ////////////////////////////////////////////////////////////////////
 ```
