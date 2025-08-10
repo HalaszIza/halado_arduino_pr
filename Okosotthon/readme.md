@@ -60,13 +60,13 @@ Specifikáció ⚙️
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_2](kapcs_2)
+![Kapcsolasi_rajz_2](kapcs_2.png)
 
 Példakód:
 ``` cpp
 ///////////////////////////////////////////////////////////
-int redpin = 13;   // Piros LED a 13-as lábra kötve
-int greenpin = 12; // Zöld LED a 12-es lábra kötve
+int redpin = 9;   // Piros LED a 9-as lábra kötve
+int greenpin = 10; // Zöld LED a 10-es lábra kötve
 
 void setup() {
   pinMode(redpin, OUTPUT);
@@ -112,12 +112,16 @@ Specifikáció ⚙️
 - Méret: 30 × 20 mm 📐
 - Tömeg: 4 g ⚖️
 
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_3](kapcs_3.png)
+
 Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
-int redpin = 13;   // Piros LED a 13-as lábra kötve
-int greenpin = 12; // Zöld LED a 12-es lábra kötve
-byte sensorPin = 4;
+int redpin = 9;   // Piros LED a 9-as lábra kötve
+int greenpin = 10; // Zöld LED a 10-es lábra kötve
+byte sensorPin = 8;
 byte indicator = 13;
 
 void setup() {
@@ -168,11 +172,15 @@ Specifikáció ⚙️
 - Méret: 44 × 16,7 mm 📐
 - Tömeg: 4 g ⚖️
 
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_4](kapcs_4.png)
+
 Példakód:
 ``` cpp
 ////////////////////////////////////////////////////////////////////
 const int flamePin = 2;     // the number of the flame pin
-const int buzzPin =  13;      // the number of the BUZZER pin
+const int buzzPin =  3;      // the number of the BUZZER pin
 
 // variables will change:
 int State = 0;         // variable for reading status
@@ -223,6 +231,7 @@ A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
 - 🔌 Dupont kábelek – néhány darab (a bekötésekhez)
 
 Kapcsolási rajz:
+
 ![Kapcsolasi_rajz_5](kapcs_5.png)
 
 Példakód:
@@ -249,3 +258,12 @@ void loop() {
 > Fontos: A LiquidCrystal teljes és jól működése érdekében fontos letölteni a hozzá tartozó könyvtárakat is!
 > Ezt a bal oldalon a 3. ikonra rákattintva tudod megtenni. Itt a keresőbe beírva 2 könyvtárat is kihoz LiquidCrystal és Adafruit LiquidCrystal néven. Érdemes mindettőt letölteni, ha esetleg nem lenne rajta a gépen!
 
+---
+# Teljes rendszer
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_6](kapcs_6.png)
+
+---
+Extra feladat:
