@@ -65,31 +65,28 @@ Kapcsolási rajz:
 Példakód:
 ``` cpp
 ///////////////////////////////////////////////////////////
-int redpin = 11; //select the pin for the red LED
-int bluepin =10; // select the pin for the blue LED
-int greenpin =9;// select the pin for the green LED
-int val;
+int redpin = 13;   // Piros LED a 13-as lábra kötve
+int greenpin = 12; // Zöld LED a 12-es lábra kötve
+
 void setup() {
   pinMode(redpin, OUTPUT);
-  pinMode(bluepin, OUTPUT);
   pinMode(greenpin, OUTPUT);
-  }
-void loop() 
-{for(val=255; val>0; val--)
-  {analogWrite(11, val);
-   analogWrite(10, 255-val);
-   analogWrite(9, 128-val);
-   delay(1); 
-  }
-for(val=0; val<255; val++)
-  {analogWrite(11, val);
-   analogWrite(10, 255-val);
-   analogWrite(9, 128-val);
-   delay(1);  
-  }
 }
+
+void loop() {
+  digitalWrite(redpin, HIGH);   // Piros LED bekapcsol
+  digitalWrite(greenpin, LOW);  // Zöld LED kikapcsol
+  delay(1000);                  // Vár 1 másodpercet
+
+  digitalWrite(redpin, LOW);    // Piros LED kikapcsol
+  digitalWrite(greenpin, HIGH); // Zöld LED bekapcsol
+  delay(1000);                  // Vár 1 másodpercet
+}
+
+
 ///////////////////////////////////////////////////////////
 ```
+> A piros 🔴 és a zöld 🟢 szín elég lesz a feladathoz!
 
 ## Mozgásérzékelő
 
