@@ -144,7 +144,46 @@ void loop() {
 
 ## Alkoholszenzor
 
+🍷 Leírás
 
+Ez az analóg MQ3 szenzor kiválóan alkalmas alkohol jelenlétének érzékelésére.
+Gyakran használják például lehelet-alkoholmérőkben. 😮‍💨🧪
+
+🧠 Jó szelektivitással rendelkezik:
+
+- 🔍 Magas érzékenység az alkoholra
+- 🚫 Alacsony érzékenység a benzolra (benzine)
+
+A szenzor érzékenysége állítható a rajta található kis potméter (tekerő) segítségével. 🔧
+
+📋 Műszaki adatok
+
+- ⚡ Tápfeszültség: 5V
+- 📶 Interfész típusa: Analóg
+- 🧰 Egyszerű meghajtó áramkör
+- 🕒 Stabil és hosszú élettartam
+- ⚡ Gyors válaszidő és magas érzékenység
+
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_4](kapcs_4.png)
+
+Példakód:
+``` cpp
+//Arduino Sample Code
+void setup()
+{
+  Serial.begin(9600); //Set serial baud rate to 9600 bps
+}
+void loop()
+{
+int val;
+val=analogRead(2);//Read Gas value from analog 0
+Serial.println(val,DEC);//Print the value to serial port
+delay(100);
+}
+```
 
 ## Mátrix led
 
