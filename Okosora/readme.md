@@ -244,6 +244,9 @@ void loop() {
   if (counter >= 16) counter = 0;  
 }
 ```
+> Könyvtárat itt is kell letölteni!
+> A bal oldalon a 3. ikonra rákattintva a könyvtárak között lehet böngészni.
+> A letöltendő könyvtárakat a GFX és Backpack néven találod és az összes felajánlott könyvtárat le kell tölteni!
 
 ---
 # Teljes rendszer
