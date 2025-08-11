@@ -251,9 +251,61 @@ void loop() {
 ---
 # Teljes rendszer
 
+Ez a projekt egy olyan rendszert valósít meg, amely képes:
+
+- 📈 Érzékelni a pulzust (pl. piezo szenzorral),
+- 🌡️ Mérni a hőmérsékletet (pl. LM35 szenzorral),
+- 🍷 Érzékelni az alkoholszintet (pl. MQ-3 gázszenzorral),
+- 💡 Ezek alapján különböző ikonokat megjeleníteni egy 8×8 mátrix kijelzőn,
+- 🔊 Fény- és hangjelzéseket adni az érzékelt állapotokhoz.
+
+2️⃣ 🫀 Pulzus érzékelés
+
+A szenzor analóg jelet ad.
+Ha az érték egy előre beállított küszöb fölé megy:
+- Megjelenik egy szív ikon ❤️ a mátrixon.
+- A buzzer lassan sípol.
+- A LED nem jelez.
+
+3️⃣ 🌡️ Hőmérséklet érzékelés
+
+Az LM35 által adott feszültségből számolt érték Celsiusban.  
+Ha a hőmérséklet > 30 °C:
+- Megjelenik egy tűz ikon 🔥.
+- A LED kétszer gyorsan villog.
+- A buzzer nem szól.
+
+4️⃣ 🍷 Alkohol érzékelés
+
+Az MQ-3 analóg értéket küld.
+Ha az érték > 400:
+- Megjelenik egy pohár ikon 🍷.
+- A LED 1 másodpercre bekapcsol.
+- A buzzer nem szól.
+
+5️⃣ 🤖 Nincs érzékelés
+
+Ha egyik érzékelő sem aktív:
+- A mátrix törlésre kerül.
+- A buzzer és LED kikapcsol.
+
+🔁 Működés logikája
+
+- A program minden ciklusban kiolvassa az érzékelőket.
+- Csak az első aktív eseményt dolgozza fel.
+- A feltételek sorrendje határozza meg, mi élvez prioritást (pl. pulzus első).
 
 Kapcsolási rajz:
 
 ![Kapcsolasi_rajz_6](kapcs_6.png)
 
 # Extra feladat
+
+**Animáld az ikonokat!**  
+- Szívverésnél a szív "pulzáljon": váltogass 2-3 képet gyorsan egymás után.
+- Lángnál lobogjon.
+
+**Kapcsolj be biztonsági módot, ha több szenzor is jelez egyszerre**  
+Ha pl. pulzus ÉS hő ÉS alkohol is jelez:
+- 💀 Vészjelző ikon jelenjen meg,
+- LED villogjon SOS jelzésben (pl. `... --- ...`).
