@@ -187,7 +187,63 @@ delay(100);
 
 ## Mátrix led
 
+💡 Bevezetés – 8×8 LED mátrix (HT16K33 vezérlővel)
 
+Mi lehet jobb egyetlen LED-nél? Sok LED!😄
+Egy szórakoztató és látványos módja a kijelzőkészítésnek az, ha egy 8×8-as LED mátrixot használsz.
+Ez a modul a HT16K33 chipet használja a mátrix meghajtására. 🔲✨
+
+📡 A mátrix vezérléséhez csak az I2C kommunikációs portot kell használnod, így rengeteg mikrokontrolleres portot szabadon hagyhatsz más célra. 👍
+
+A modul egy 4 tűs csatlakozófejjel érkezik, amelynek lábköze 2.54 mm, így könnyen csatlakoztatható jumperkábelekkel. 🔌
+
+⚙️ Extra lehetőség
+
+A modulon található három DIP kapcsoló is, melyekkel szabadon állíthatod be az I2C-címet. Ez lehetővé teszi, hogy akár több mátrixmodult is használj egyazon projekten belül, összeakadás nélkül. 🔁🔧
+
+📋 Műszaki adatok
+
+- 🔌 Interfész: 4 tűs csatlakozó (2.54mm)
+- ⚡ Üzemi feszültség: DC 4.5V – 5.5V
+- 🎛️ 3 db DIP kapcsoló az I2C-cím kiválasztásához
+- 📐 Méretek: 52 mm × 34 mm × 11 mm
+- ⚖️ Tömeg: 13.2 g
+
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_5](kapcs_5)
+
+Példakód:
+``` cpp
+#include <Wire.h>
+#include "Adafruit_LEDBackpack.h"
+#include "Adafruit_GFX.h"
+#ifndef _BV
+#define _BV(bit) (1<<(bit))
+#endif
+Adafruit_LEDBackpack matrix = Adafruit_LEDBackpack();
+uint8_t counter = 0;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("HT16K33 test");
+  matrix.begin(0x70);  // pass in the address
+}
+void loop() {
+  // paint one LED per row. The HT16K33 internal memory looks like
+  // a 8x16 bit matrix (8 rows, 16 columns)
+  for (uint8_t i=0; i<8; i++) {
+// draw a diagonal row of pixels
+
+    matrix.displaybuffer[i] = _BV((counter+i) % 16) | _BV((counter+i+8) % 16)  ;
+  }
+  // write the changes we just made to the display
+  matrix.writeDisplay();
+  delay(100);
+ counter++;
+  if (counter >= 16) counter = 0;  
+}
+```
 
 ---
 # Teljes rendszer
