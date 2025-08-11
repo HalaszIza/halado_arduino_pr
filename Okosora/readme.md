@@ -84,11 +84,66 @@ void loop()
 }
 ```
 
+## Hőmérséklet mérő
+
+🌡️ Bevezetés
+
+Az LM35 lineáris hőmérséklet-érzékelő egy félvezető alapú szenzor, amely az LM35 típusú hőmérséklet-érzékelőre épül. 🧊🌬️
+Ez a modul környezeti hőmérséklet mérésére alkalmas.
+
+🌡️ A szenzor működési tartománya 0°C és 100°C között van.
+🎯 Érzékenysége: 10 mV minden egyes Celsius-fok növekedésre.
+⚡ A kimeneti feszültség arányos a mért hőmérséklettel.
+
+🔬 Használati információk
+
+Ez az érzékelő általánosan használt hőmérsékletmérő eszköz.
+
+A hőmérsékletmérés területén gyakran alkalmazott típusok:
+- 🌡️ Termoelemek
+- 🧪 Platina ellenállás
+- 🧊 Termikus ellenállás
+- 💾 Félvezető hőmérsékletmérő chipek
+
+A LM35 érzékelő előnye:
+- 📈 Kiváló linearitás
+- 🎯 Magas érzékenység
+- ⚙️ Egyszerű csatlakozás Arduino-hoz (például szenzor shieldhez)
+
+⚙️ Műszaki adatok
+- 📏 Érzékenység: 10 mV / °C
+- 🌡️ Mérési tartomány: 0°C – 100°C
+- 📐 Méret: 30 × 20 mm
+- ⚖️ Tömeg: 3 g
+
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_3](kapcs_3.png)
+
+Példakód:
+``` cpp
+float temppin = A1;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  float tempC = analogRead(temppin) * (500.0 / 1023.0);
+
+  Serial.print("Temp: ");
+  Serial.print(tempC);
+  Serial.println(" C");
+
+  delay(500);
+}
+```
+> Az érték nem bitos, hogy a valóságot mutatja!
+
 ## Alkoholszenzor
 
-
-
-## Hőmérséklet mérő
 
 
 ## Mátrix led
