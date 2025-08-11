@@ -212,7 +212,7 @@ A modulon található három DIP kapcsoló is, melyekkel szabadon állíthatod b
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_5](kapcs_5)
+![Kapcsolasi_rajz_5](kapcs_5.png)
 
 Példakód:
 ``` cpp
@@ -248,5 +248,9 @@ void loop() {
 ---
 # Teljes rendszer
 
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_6](kapcs_6.png)
 
 # Extra feladat
