@@ -261,9 +261,62 @@ void loop() {
 ---
 # Teljes rendszer
 
+📋 Feladatleírás a kódhoz
+
+1. 🖥️ LCD kijelző inicializálása és használata  
+Az LiquidCrystal könyvtárral egy 8x2 karakteres LCD-t kezelünk.  
+A lcd.begin(8, 2); sor inicializálja a kijelzőt.  
+A program különböző állapotokban az alábbi üzeneteket írja ki:
+- ✅ „Minden okes!” — normál állapot, minden rendben.
+- 🚶‍♂️ „Mozgas van!” — ha mozgást érzékel a szenzor.
+- 🔥 „Tuz vagy fust van!” — ha lángot vagy füstöt érzékel a szenzor.
+
+2. 💡 Kimenetek kezelése (LED-ek és buzzer)
+- 🔴 Piros LED (redpin): vészjelzés, például tűz/füst esetén világít.
+- 🟢 Zöld LED (greenpin): normál vagy mozgás állapotban világít.
+- 🔊 Buzzer (buzzpin): hangjelzést ad, ha riasztás van.
+
+3. 📡 Bemenetek kezelése
+- 👣 motionPin: mozgásérzékelő jele.
+- 🔥 flamepin: láng/füstérzékelő jele.
+
+4. 👀 Mozgásérzékelő működése
+Ha mozgást érzékel (HIGH jel), akkor:
+- Megjeleníti: „Mozgas van!” az LCD-n.
+- Bekapcsolja a zöld LED-et.
+- Bekapcsolja a buzzert.
+- Ha nincs mozgás, visszaáll „Minden okes!” állapotba, zöld LED kikapcsol, piros LED bekapcsol, buzzer kikapcsol.
+
+5. 🔥 Láng/füstérzékelő működése
+Ha lángot/füstöt érzékel (LOW jel), akkor:
+- Megjeleníti: „Tuz vagy fust van!” az LCD-n.
+- Mindkét LED világít (piros és zöld).
+- Bekapcsolja a buzzert.
+2 mp múlva visszaáll alapállapotba.
+
+6. ⚙️ Állapotkezelés
+motion_on és flame_on változók segítenek nyomon követni, hogy már jeleztünk-e az adott esemény miatt.  
+flame_time időmérőként szolgál, hogy 2 mp után visszaálljon az alapállapot.
+
+7. ⏳ Késleltetés és stabilitás
+Kis 50 ms késleltetés a stabil működésért.
+
 Kapcsolási rajz:
 
 ![Kapcsolasi_rajz_6](kapcs_6.png)
 
 ---
-Extra feladat:
+# Extra feladat:
+
+**Többszintű riasztás hanggal 🎵**  
+Készíts különböző hangmintákat a buzzerrel, pl.:
+- Mozgás esetén egy egyszerű, rövid sípolás.
+- Tűz/füst esetén egy hosszabb, folyamatos sípolás.
+Így a hangból is felismerhető, milyen esemény történt.
+
+**LCD kijelző energiatakarékosság 💡**  
+Ha 10 másodpercig nem történik semmi, kapcsolja ki a kijelzőt (lcd.noDisplay()).  
+Ha új esemény érkezik, kapcsolja vissza (lcd.display()).
+
+**Többszörös események kezelése 🧠** 
+Ha 2 percen belül többször is mozgás vagy tűz van, akkor emeld a riasztás intenzitását (pl. szaggatott buzzer, villogó LED).
