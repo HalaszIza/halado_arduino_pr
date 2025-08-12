@@ -248,6 +248,26 @@ void loop() {
 > A bal oldalon a 3. ikonra rákattintva a könyvtárak között lehet böngészni.
 > A letöltendő könyvtárakat a GFX és Backpack néven találod és az összes felajánlott könyvtárat le kell tölteni!
 
+Próbálj meg kirjzolni egy mosolygós arcot a mátrixon:
+``` cpp
+// 😊 Minden rendben van
+uint8_t smile[8] = {
+  B00000000,
+  B00000000,
+  B00110011,
+  B00110011,
+  B00000000,
+  B00010010,
+  B00001100,
+  B00000000,
+};
+
+void loop() {
+  showIcon(smile);
+
+}
+```
+> Egy kis segítség hozzá!
 ---
 # Teljes rendszer
 
