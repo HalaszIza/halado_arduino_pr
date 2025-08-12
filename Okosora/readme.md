@@ -306,7 +306,7 @@ Ha az érték > 400:
 5️⃣ 🤖 Nincs érzékelés
 
 Ha egyik érzékelő sem aktív:
-- A mátrix törlésre kerül.
+- A mátrixra egy mosolygós fej kerül kirajzolásra.
 - A buzzer és LED kikapcsol.
 
 🔁 Működés logikája
