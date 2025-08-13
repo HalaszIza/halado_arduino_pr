@@ -204,10 +204,63 @@ void loop() {
 ---
 # Teljes rendszer
 
+A projekt célja egy stopperóra rendszer megvalósítása 🕒 Arduino segítségével, amely egy 8x2-es karakteres LCD kijelzőn 🖥️ jeleníti meg az eltelt időt. A stopper elindítása és megállítása egy érintésérzékelővel történik 👆, míg a nullázást egy külön nyomógombbal lehet végrehajtani 🔘.
+
+A rendszer vizuális visszajelzést is ad egy RGB LED segítségével 💡:
+- Normál állapotban (amikor a stopper nem fut) a LED zölden világít ✅.
+- Az érintésérzékelő aktiválásakor, azaz a stopper elindításakor vagy megállításakor a LED lilára vált 🟣.
+- A RESET gomb megnyomásakor a LED narancssárgára vált 🟠, jelezve, hogy a stopper visszaállt 00:00-ra.
+
+Az LCD kijelző első sora a "Stopper" feliratot mutatja, a második sor pedig az aktuális időt perc:másodperc formátumban (pl. 02:37). A rendszer működése közben kis késleltetés (200 ms) biztosítja a kijelző stabil frissítését és a gombnyomások zavartalan kezelését ⏳.
+
+Ez a projekt jól szemlélteti az időmérés, LCD-kezelés, szenzorhasználat és RGB LED vezérlés alapjait, így kiváló kiindulópont kezdők számára az Arduino világában 🔧📗.
 
 Kapcsolási rajz:
 
 ![Kapcsolasi_rajz_5](kapcs_5.png)
 
+Egy kis segítség a stopperórához:
+``` cpp
+unsigned long startTime = 0;
+unsigned long elapsedTime = 0;
+
+void setup() {
+  lcd.print("Ido:");
+
+  startTime = millis();  // induláskor elmentjük az indulási időt
+}
+
+void loop() {
+  // Számoljuk az eltelt időt
+  elapsedTime = millis() - startTime;
+
+  // Számítsuk ki a perceket és másodperceket
+  unsigned int seconds = (elapsedTime / 1000) % 60;
+  unsigned int minutes = (elapsedTime / 60000);
+
+  // Kiírás LCD-re
+  lcd.setCursor(0, 1);
+  if (minutes < 10) lcd.print("0");
+  lcd.print(minutes);
+  lcd.print(":");
+  if (seconds < 10) lcd.print("0");
+  lcd.print(seconds);
+
+  delay(200); // frissítés 5x másodpercenként
+}
+```
+> A kijelző kódját kell kiegészíteni!
 
 # Extra feladat
+
+🟡 1. Maximális idő mentése
+🕓 Keresd meg a leghosszabb stopperfutást, és írd ki az LCD-n, ha új rekord születik!
+
+Leírás:
+Menteni kell, hogy mennyi volt a stopper eddigi leghosszabb futása. Ha új rekordot ér el a felhasználó, az LCD-n jelenjen meg pl. „🥇Rekord!” felirat a felső sorban egy kis időre.
+
+🔵 2. Villogó kijelzés, ha kerek idő van
+🎯 Ha az eltelt idő pontosan 1:00, 2:00 stb., akkor villogjon a kijelzés!
+
+Leírás:
+Ellenőrizd, hogy a másodpercek értéke 0, és perc > 0. Ha igen, 1 másodpercig villogtathatod a kijelző tartalmát, vagy megjelenítheted a „Kerek idő!” szöveget az első sorban.
