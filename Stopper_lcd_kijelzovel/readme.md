@@ -201,5 +201,13 @@ void loop() {
 > Fontos: A LiquidCrystal teljes és jól működése érdekében fontos letölteni a hozzá tartozó könyvtárakat is!
 > Ezt a bal oldalon a 3. ikonra rákattintva tudod megtenni. Itt a keresőbe beírva 2 könyvtárat is kihoz LiquidCrystal és Adafruit LiquidCrystal néven. Érdemes mindettőt letölteni, ha esetleg nem lenne rajta a gépen!
 
+---
+# Teljes rendszer
 
 
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_5](kapcs_5.png)
+
+
+# Extra feladat
