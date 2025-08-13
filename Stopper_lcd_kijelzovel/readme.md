@@ -4,6 +4,34 @@
 
 ---
 
+## Érintés érzékelő
+
+📄 Leírás
+
+Unod már a mechanikus gombok nyomkodását? 🤯 Próbáld ki a kapacitív érintésérzékelőnket! 👆
+Az érintésérzékelők gyakran megtalálhatók különféle elektronikai eszközökben – most pedig a saját Arduino projektedet is feldobhatod vele! 🚀✨
+
+Ez a kis szenzor érzékeli az emberi test vagy fém érintését, és HIGH/LOW jelszinttel jelez vissza. ⚡
+Még akkor is működik, ha vékony ruhával 👕 vagy papírral 📄 van elválasztva – bár a érzékenység csökken, ha a szigetelő réteg túl vastag lesz.
+
+📈 Folyamatosan fejlesztjük ezeket a szenzormodulokat, hogy még jobb élményt nyújtsanak számodra!
+
+⚙️ Műszaki adatok
+- 🔋 Tápfeszültség: 3.3V – 5V
+- 🔌 Interfész: Digitális (Digital)
+- 📏 Méret: 30 x 20 mm
+- ⚖️ Tömeg: 3 g
+
+Kapcsolási rajz:
+
+![Kapsolasi_rajz_1](kapcs_1.png)
+
+Példakód:
+``` cpp
+
+```
+
+
 ## Gomb 🔘
 
 **📘 Leírás:** Ez egy alap nyomógomb modul 🟠. Egyszerűen bedugható egy IO shield-be, így ideális az első Arduino próbálkozásokhoz 🤖.
@@ -33,10 +61,8 @@
 ////////////////////////////////////////////////////////////////////
 /* # When you push the digital button, the Led on the board will be turned on. Otherwise,the led is turned off.
 */
-int redled = 10; // initialize digital pin 10.
-int yellowled = 9; // initialize digital pin 9.
-int greenled = 8; // initialize digital pin 8.
-int inputPin = 5;               // Connect sensor to input pin 5
+int redled = 8; // initialize digital pin 8.
+int inputPin = 3;               // Connect sensor to input pin 5
 void setup() {
   pinMode(redled, OUTPUT);      // set LED as output
   pinMode(yellowled, OUTPUT);
@@ -81,9 +107,9 @@ Kapcsolási rajz:
 Példakód:
 ``` cpp
 ///////////////////////////////////////////////////////////
-int redpin = 9;   // Piros LED a 9-as lábra kötve
-int greenpin = 10; // Zöld LED a 10-es lábra kötve
-int bluepin = 11;  // Kék LED a 11-es lábra kötve
+int redpin = 8;   // Piros LED a 8-as lábra kötve
+int greenpin = 9; // Zöld LED a 9-es lábra kötve
+int bluepin = 10;  // Kék LED a 10-es lábra kötve
 void setup() {
   pinMode(redpin, OUTPUT);
   pinMode(greenpin, OUTPUT);
@@ -106,6 +132,59 @@ void loop() {
   digitalWrite(bluepin, HIGH);  // Kék LED bekapcsol
   delay(1000);                  // Vár 1 másodpercet
 }
+```
+
+## Kijelző
+
+📄 Leírás
+Ebben a projektben egy 0802-es LCD kijelzőt fogunk vezérelni, amelyhez a V4.0 fejlesztőpanelt használjuk. ⚙️📟
+
+Az LCD kijelző 8 oszlop és 2 sor megjelenítésére képes (8x2 karakter), és a chip működési feszültsége 4,5–5,5V között van. ⚡🔋
+
+Az 0802-es LCD kétféleképpen köthető be a szövegmegjelenítéshez:
+- 4-bites módban 🧩
+- 8-bites módban 🔗
+(attól függően, hány adatvezetéket használsz)
+> Mi a 4-bites módot fogjuk használni a feladat során!
+
+🧰 Szükséges hardverelemek
+A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
+- ✅ V4.0 Fejlesztőpanel × 1
+- 📟 0802 LCD kijelző × 1
+- 🎚️ Forgatható potméter × 1 (a kontraszt beállításához)
+- 🧱 Breadboard (próbatábla) × 1
+- 🔌 USB kábel × 1 (az áramellátáshoz és programozáshoz)
+- 🔗 Ugróvezetékek (jumper wire) – néhány darab
+- 🔌 Dupont kábelek – néhány darab (a bekötésekhez)
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_5](kapcs_5.png)
+
+Példakód:
+``` cpp
+//////////////////////////////////////////////////////////
+#include <LiquidCrystal.h>
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(11, 12, 6, 7, 4, 5);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(8, 2);
+  // Print a message to the LCD.
+  lcd.setCursor(0, 0);
+  lcd.print(" Hello");
+  lcd.setCursor(0, 1);
+  lcd.print(" world!");
+}
+
+void loop() {
+}
+//////////////////////////////////////////////////////////
+```
+> Fontos: A LiquidCrystal teljes és jól működése érdekében fontos letölteni a hozzá tartozó könyvtárakat is!
+> Ezt a bal oldalon a 3. ikonra rákattintva tudod megtenni. Itt a keresőbe beírva 2 könyvtárat is kihoz LiquidCrystal és Adafruit LiquidCrystal néven. Érdemes mindettőt letölteni, ha esetleg nem lenne rajta a gépen!
+
 
 
 ///////////////////////////////////////////////////////////
