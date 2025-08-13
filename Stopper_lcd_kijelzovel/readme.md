@@ -102,7 +102,7 @@ Specifikáció ⚙️
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_2](kapcs_2.png)
+![Kapcsolasi_rajz_3](kapcs_3.png)
 
 Példakód:
 ``` cpp
@@ -159,7 +159,7 @@ A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_5](kapcs_5.png)
+![Kapcsolasi_rajz_4](kapcs_4.png)
 
 Példakód:
 ``` cpp
