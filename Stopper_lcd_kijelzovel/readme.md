@@ -58,4 +58,55 @@ void loop(){
 ////////////////////////////////////////////////////////////////////
 ```
 
-##
+## RGB Led
+
+Leírás 📘
+
+Ez egy teljes színskálás LED modul 🌈, amely három alapszínt tartalmaz – piros 🔴, zöld 🟢 és kék 🔵. Ezek különálló LED fényekként láthatók.
+
+Programozás után a LED-eket sorrendben be- és kikapcsolhatod 💡, vagy PWM (impulzusszélesség-moduláció) analóg kimenetet is használhatsz arra, hogy a három színt összekeverve különböző színeket hozz létre 🎨.
+
+Specifikáció ⚙️
+- Színek: piros 🔴, zöld 🟢, kék 🔵
+- Fényerő: magas ✨
+- Feszültség: 5V 🔌
+- Bemenet: digitális szint 💻
+- Méret: 30 × 20 mm 📏
+- Tömeg: 3g ⚖️
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_2](kapcs_2.png)
+
+Példakód:
+``` cpp
+///////////////////////////////////////////////////////////
+int redpin = 9;   // Piros LED a 9-as lábra kötve
+int greenpin = 10; // Zöld LED a 10-es lábra kötve
+int bluepin = 11;  // Kék LED a 11-es lábra kötve
+void setup() {
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
+  pinMode(bluepin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(redpin, HIGH);   // Piros LED bekapcsol
+  digitalWrite(greenpin, LOW);  // Zöld LED kikapcsol
+  digitalWrite(bluepin, LOW);   // Kék LED kikapcsol
+  delay(1000);                  // Vár 1 másodpercet
+
+  digitalWrite(redpin, LOW);    // Piros LED kikapcsol
+  digitalWrite(greenpin, HIGH); // Zöld LED bekapcsol
+  digitalWrite(bluepin, LOW);   // Kék LED kikapcsol
+  delay(1000);                  // Vár 1 másodpercet
+
+  digitalWrite(redpin, LOW);    // Piros LED kikapcsol
+  digitalWrite(greenpin, LOW);  // Zöld LED bekapcsol
+  digitalWrite(bluepin, HIGH);  // Kék LED bekapcsol
+  delay(1000);                  // Vár 1 másodpercet
+}
+
+
+///////////////////////////////////////////////////////////
+```
