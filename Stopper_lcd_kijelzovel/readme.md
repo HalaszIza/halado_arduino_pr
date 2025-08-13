@@ -28,9 +28,28 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+int ledPin = 8;
 
+int KEY = 2;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(KEY, INPUT);
+}
+void loop()
+{
+  if(digitalRead(KEY)==LOW) 
+  {
+  digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
+  }
+}
 ```
-
+> Bármelyik színnel ki lehet próbálni, akár az összessel!
 
 ## Gomb 🔘
 
