@@ -95,7 +95,7 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
-int temt6000Pin = 0;
+int temt6000Pin = 1;
 
 void setup() {
   Serial.begin(9600);
@@ -296,6 +296,7 @@ Példakód:
 ``` cpp
 
 ```
+> A relé működését tesztelve kell hozzá egy sima fehér led. A teljes rendszerben ez az alkatrész már nem lesz a feladat rész csupán a működés megértése céljából tartalmazza a feladat.
 ---
 # Teljes rendszer
 
