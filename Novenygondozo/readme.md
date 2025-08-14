@@ -215,6 +215,28 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+const int sensorPin = A2;  
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int val = analogRead(sensorPin);  // csak egyszer olvasd be
+
+  if (val < 300) {
+    Serial.print("Száraz a föld, locsolni kell! - ");
+  }
+  else if (val >= 300 && val < 700) {
+    Serial.print("Ideális állapot, nincs szükség locsolásra. - ");
+  }
+  else {
+    Serial.print("Túl sok a víz, távolítsd el! - ");
+  }
+
+  Serial.println(val);  // és ezt az értéket írd ki
+  delay(1000);
+}
 
 ```
 
