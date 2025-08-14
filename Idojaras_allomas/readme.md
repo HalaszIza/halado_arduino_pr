@@ -107,11 +107,48 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+#include <dht.h>
+
+dht DHT;
+#define DHT11_PIN 2  // A szenzor adatlábja a D0-re van kötve (Arduino-n)
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("DHT11 TESZT PROGRAM");
+  Serial.println("Típus\tÁllapot\tPáratartalom (%)\tHőmérséklet (C)");
+}
+
+void loop() {
+  int chk = DHT.read11(DHT11_PIN);  // DHT11 típushoz read11() kell
+
+  Serial.print("DHT11\t");
+
+  switch (chk) {
+    case DHTLIB_OK:
+      Serial.print("OK\t");
+      break;
+    case DHTLIB_ERROR_CHECKSUM:
+      Serial.print("Checksum hiba\t");
+      break;
+    case DHTLIB_ERROR_TIMEOUT:
+      Serial.print("Időtúllépés\t");
+      break;
+    default:
+      Serial.print("Ismeretlen hiba\t");
+      break;
+  }
+
+  Serial.print(DHT.humidity, 1);
+  Serial.print("\t\t");
+  Serial.println(DHT.temperature, 1);
+
+  delay(2000);  // 2 másodperc várakozás
+}
 
 ```
 > Könyvtárat itt is kell letölteni!
 > A bal oldalon a 3. ikonra rákattintva a könyvtárak között lehet böngészni.
-> A letöltendő könyvtárakat a dht11 néven találod és azt le kell tölteni!
+> A letöltendő könyvtárakat a DHTlib néven találod és azt le kell tölteni!
 
 ## Környezeti fényérzékelő
 
