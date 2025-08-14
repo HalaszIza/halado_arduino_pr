@@ -109,8 +109,9 @@ Példakód:
 ``` cpp
 
 ```
-> Ehhez könyvárat kell letölteni!
-> A dht11 nevűt kell megkeresni a könyvtárak közül és onnan a másodikat letölteni!
+> Könyvtárat itt is kell letölteni!
+> A bal oldalon a 3. ikonra rákattintva a könyvtárak között lehet böngészni.
+> A letöltendő könyvtárakat a dht11 néven találod és azt le kell tölteni!
 
 ## Környezeti fényérzékelő
 
