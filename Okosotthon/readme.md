@@ -209,7 +209,7 @@ State = digitalRead(flamePin);
 
 ## Kijelző
 
-📄 Leírás
+📄 Leírás  
 Ebben a projektben egy 0802-es LCD kijelzőt fogunk vezérelni, amelyhez a V4.0 fejlesztőpanelt használjuk. ⚙️📟
 
 Az LCD kijelző 8 oszlop és 2 sor megjelenítésére képes (8x2 karakter), és a chip működési feszültsége 4,5–5,5V között van. ⚡🔋
