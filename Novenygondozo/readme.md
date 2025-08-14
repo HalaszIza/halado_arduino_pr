@@ -72,4 +72,56 @@ void loop()
 }
 ```
 
+## Környezeti fényérzékelő
+
+💡 Leírás
+
+Előbb-utóbb szükséged lesz arra, hogy a környezeti fényerőt nagyobb pontossággal érzékeld, mint amit egy hagyományos fényellenállás (LDR) nyújt – anélkül, hogy bonyolultabbá tennéd a projektedet ⚙️🌞.  
+Amikor ez elérkezik, érdemes beszerezned egy TEMT6000 környezeti fényérzékelőt 📦🔦.
+
+A TEMT6000 érzékenysége az emberi szem működéséhez van hangolva 👁️✨, de gyenge fényviszonyok között kevésbé teljesít jól 🌑.  
+Ugyanakkor kiválóan érzékeli az apró fényváltozásokat egy széles fényerőtartományon belül 🌗➡️🌕.
+
+Mivel az emberi szemhez hasonlóan működik, nem reagál jól az infravörös (IR) vagy UV fényre 🔴❌🟣 – ezt tartsd szem előtt a projekted tervezésénél.
+
+📐 Műszaki adatok
+- ⚡ Tápfeszültség: +5V DC, 50mA
+- 📏 Méret: 36.5 × 16 mm
+- ⚖️ Tömeg: 4g
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_3](kapcs_.png)
+
+Példakód:
+``` cpp
+int temt6000Pin = 0;
+
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+
+ int value = analogRead(temt6000Pin);
+
+ if (value < 2)
+ {
+    Serial.print("Sötét van! - ");
+    Serial.println(value);
+ }
+ else if (value > 2 && value < 50)
+ {
+    Serial.print("Normál fényerősség! - ");
+    Serial.println(value);
+ }
+ else
+ {
+    Serial.print("Túl világos van! - ");
+    Serial.println(value);
+ }
+
+ delay(1000); 
+}
+```
+
 
