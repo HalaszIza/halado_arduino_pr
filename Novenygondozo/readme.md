@@ -124,4 +124,50 @@ void loop() {
 }
 ```
 
+## Érintés érzékelő
+
+📄 Leírás
+
+Unod már a mechanikus gombok nyomkodását? 🤯 Próbáld ki a kapacitív érintésérzékelőnket! 👆
+Az érintésérzékelők gyakran megtalálhatók különféle elektronikai eszközökben – most pedig a saját Arduino projektedet is feldobhatod vele! 🚀✨
+
+Ez a kis szenzor érzékeli az emberi test vagy fém érintését, és HIGH/LOW jelszinttel jelez vissza. ⚡
+Még akkor is működik, ha vékony ruhával 👕 vagy papírral 📄 van elválasztva – bár a érzékenység csökken, ha a szigetelő réteg túl vastag lesz.
+
+📈 Folyamatosan fejlesztjük ezeket a szenzormodulokat, hogy még jobb élményt nyújtsanak számodra!
+
+⚙️ Műszaki adatok
+- 🔋 Tápfeszültség: 3.3V – 5V
+- 🔌 Interfész: Digitális (Digital)
+- 📏 Méret: 30 x 20 mm
+- ⚖️ Tömeg: 3 g
+
+Kapcsolási rajz:
+
+![Kapsolasi_rajz_1](kapcs_1.png)
+
+Példakód:
+``` cpp
+int ledPin = 8;
+
+int KEY = 2;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(KEY, INPUT);
+}
+void loop()
+{
+  if(digitalRead(KEY)==LOW) 
+  {
+  digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
+  }
+}
+```
+
 
