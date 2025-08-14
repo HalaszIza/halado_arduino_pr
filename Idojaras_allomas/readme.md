@@ -37,7 +37,39 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+int led = 13; 
+int val = 0; 
+int data = 0; 
 
+void setup()
+{
+  pinMode(led, OUTPUT); 
+  Serial.begin(9600); 
+}
+void loop()
+{
+  val = analogRead(0); 
+
+  if(val>700)
+  {  
+    digitalWrite(led,HIGH);
+  }  
+  else {
+    digitalWrite(led,LOW); 
+  }
+  data = val; 
+
+  if (data > 0) {
+    Serial.println("Eső van! ");
+    Serial.println(data); 
+  }
+  else {
+    Serial.println("Száraz az idő! ");
+    Serial.println(data);
+  }
+
+  delay(1000);
+}
 ```
 
 ## DHT11 - Hőmérséklet és páratartalom érzékelő
