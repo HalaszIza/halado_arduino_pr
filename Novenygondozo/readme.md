@@ -91,7 +91,7 @@ Mivel az emberi szemhez hasonlóan működik, nem reagál jól az infravörös (
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_3](kapcs_.png)
+![Kapcsolasi_rajz_2](kapcs_2.png)
 
 Példakód:
 ``` cpp
@@ -144,7 +144,7 @@ Még akkor is működik, ha vékony ruhával 👕 vagy papírral 📄 van elvál
 
 Kapcsolási rajz:
 
-![Kapsolasi_rajz_1](kapcs_1.png)
+![Kapsolasi_rajz_3](kapcs_3.png)
 
 Példakód:
 ``` cpp
@@ -169,5 +169,56 @@ void loop()
   }
 }
 ```
+
+## Talajnedvesség érzékelő
+
+🌱 Leírás – Talajnedvesség-érzékelő
+
+Ez egy egyszerű talajnedvesség-érzékelő, amely arra szolgál, hogy észlelje a talaj nedvességtartalmát 💧.
+Ha a talaj száraz, a szenzor által kiadott analóg érték csökken, ha pedig nedves, akkor az érték növekszik 📉📈.
+
+Ez a szenzor ideális például automata öntözőrendszerhez, mivel képes megállapítani, hogy a növényed "szomjas-e", így megelőzhető a kiszáradása, amikor nem vagy otthon 🌿🚿.
+
+Ha ezt az érzékelőt egy Arduino vezérlővel kombinálod 🤖, akkor a növényed kényelmesebben "érzi magát", és a kerted is okosabbá válik 🌼📲.
+
+A szenzor használata egyszerűbb, mint gondolnád!
+Ha a projektedhez talajérzékelésre van szükség, ez tökéletes választás lesz ✔️🪴.
+
+⚙️ Működés
+
+Az érzékelőn két fém szonda található, amelyeket a földbe kell szúrni 🧪🌍.  
+Ha áram halad át a talajon, a szenzor ellenállásértéket mér, majd ebből számolja ki a nedvességtartalmat 📊.
+- Minél nedvesebb a talaj → annál kisebb az ellenállás → annál nagyobb a vezetőképesség ⚡.
+- A szenzor felülete fémbevonatot kapott, hogy hosszabb legyen az élettartama 🛡️.
+
+Használata egyszerű: szúrd a földbe, és olvasd be az értéket az Arduino AD átalakítóján keresztül (analóg bemenet) 📥📟.
+
+A növény pedig szinte "szól neked":
+- 🌼 „Vizet kérek!”
+- 📐 Műszaki adatok
+- 🔋 Tápfeszültség: 3.3V vagy 5V
+- ⚡ Működési áram: ≤ 20 mA
+- 📤 Kimeneti feszültség: 0 – 2.3V
+
+(Ha a szenzor teljesen vízbe van merítve, az érték kb. 2.3V)
+
+Minél nedvesebb a talaj, annál magasabb a kimeneti feszültség
+- 🧪 Szenzortípus: Analóg kimenet
+- 🔌 Lábkiosztás:
+- Pin1 → Jel (Signal)
+- Pin2 → GND (Föld)
+- Pin3 → VCC (Táp)
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_4](kapcs_4.png)
+
+Példakód:
+``` cpp
+
+```
+
+## 
+
 
 
