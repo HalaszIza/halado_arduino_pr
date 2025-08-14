@@ -136,7 +136,33 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+int temt6000Pin = 0;
 
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+
+ int value = analogRead(temt6000Pin);
+
+ if (value < 2)
+ {
+    Serial.print("Sötét van! - ");
+    Serial.println(value);
+ }
+ else if (value > 2 && value < 50)
+ {
+    Serial.print("Normál fényerősség! - ");
+    Serial.println(value);
+ }
+ else
+ {
+    Serial.print("Túl világos van! - ");
+    Serial.println(value);
+ }
+
+ delay(1000); 
+}
 ```
 
 ## LCD kijelző potméterrel
