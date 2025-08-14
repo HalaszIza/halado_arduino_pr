@@ -240,7 +240,64 @@ void loop() {
 
 ```
 
-## 
+## Relé - a szivattyú működtetéséhez
+
+⚙️ Bevezetés – Egyszeres relémodul (Single Relay Module)
+
+Ez az egyetlen relés modul 🧩 kiválóan alkalmas interaktív projektekhez, például automata rendszerekhez vagy távolról vezérelhető eszközökhöz.  
+A modulban egy SONGLE 5V-os, kiváló minőségű relé található 🔌.
+
+Felhasználható például világítás, elektromos készülékek, motorok vagy más, nagy áramú vagy nagy feszültségű eszközök vezérlésére 💡⚙️🚰.
+
+A moduláris kialakítás miatt könnyen használható Arduino vagy más mikrokontrollerrel 🤖.
+A relét digitális kimeneti lábról (IO port) lehet vezérelni.
+
+📐 Műszaki adatok
+
+📶 Típus: Digitális
+
+⚡ Névleges áramerősség:
+- 10A (NO – normálisan nyitott kontaktus)
+- 5A (NC – normálisan zárt kontaktus)
+
+🔌 Maximális kapcsolási feszültség:
+- 150V AC
+- 24V DC
+
+🔧 Digitális interfész:
+- TTL szintű vezérlőjel (pl. Arduino 5V)
+
+⚙️ Névleges terhelés:
+- 8A 150VAC (NO)
+- 10A 24VDC (NO)
+- 5A 250VAC (NO/NC)
+- 5A 24VDC (NO/NC)
+
+💥 Maximális kapcsolási teljesítmény:
+- NO (normálisan nyitott): AC 1200VA / DC 240W
+- NC (normálisan zárt): AC 625VA / DC 120W
+
+⏱️ Kapcsolási idő: 10 ms
+
+🔌 Mire használható?
+
+Ez a relé tökéletes olyan eszközök vezérlésére, mint:
+- 💡 Lámpák
+- 🧲 Szolenoidszelepek
+- 🚿 Vízpumpák
+- 🔧 Motorok
+- 🏠 Okosotthon-alkalmazások (pl. öntözés, világítás, szellőztetés)
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_5](kapcs_5.png)
+
+Példakód:
+``` cpp
+
+```
+---
+# Teljes rendszer
 
 
-
+# Extra feladat
