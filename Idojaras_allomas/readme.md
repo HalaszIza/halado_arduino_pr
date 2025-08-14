@@ -109,6 +109,8 @@ Példakód:
 ``` cpp
 
 ```
+> Ehhez könyvárat kell letölteni!
+> A dht11 nevűt kell megkeresni a könyvtárak közül és onnan a másodikat letölteni!
 
 ## Környezeti fényérzékelő
 
