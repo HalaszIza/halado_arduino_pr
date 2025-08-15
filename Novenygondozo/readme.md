@@ -312,7 +312,73 @@ void loop() {
 ```
 > A relé működését tesztelve kell hozzá egy sima fehér led. A teljes rendszerben ez az alkatrész már nem lesz a feladat rész csupán a működés megértése céljából tartalmazza a feladat.
 ---
+
 # Teljes rendszer
 
+🎯 Cél  
+Egy egyszerű, érzékelőalapú öntözőrendszer megvalósítása, amely:
+- figyeli a külső fényviszonyokat,
+- érzékeli, hogy esik-e az eső,
+- ellenőrzi a talajnedvességet,
+
+és csak akkor indítja el a szivattyút, ha:
+- a föld túl száraz, és
+- az ember jóváhagyja egy érintésérzékelő megnyomásával.
+
+🧠 Rendszer működése lépésről lépésre
+
+🌧️ Esőérzékelés
+
+Az esőérzékelő (pl. A0) méri a víz jelenlétét.
+
+Ha 700 feletti értéket érzékel, azt jelenti: esik az eső.
+
+Ez esetben a beépített LED (D13) világít, és megjelenik az üzenet: Eső van!.
+
+🌞 Fényérzékelés
+
+A fényérzékelő (pl. A1) mutatja, hogy milyen fényviszonyok uralkodnak:
+- <2: Sötét van
+- 2–50: Normál fény
+- 50: Túl világos
+
+Ez csak információként szolgál, nem befolyásolja a locsolást.
+
+🌾 Talajnedvesség érzékelése
+
+A szenzor (pl. A2) méri a föld nedvességtartalmát:
+- <300: Száraz – locsolni kell
+- 300–700: Ideális állapot
+- 700: Túl vizes – nem szabad locsolni
+
+👆 Érintésérzékelő használata (D2)
+
+Ha száraz a talaj, a rendszer csak akkor indítja el a szivattyút, ha az érintésérzékelőt megérintik.
+
+Ha megnyomod, a relé aktiválódik (HIGH állapot), ami elindítja a szivattyút 1 másodpercre.
 
 # Extra feladat
+
+1️⃣ 🌞 Ne locsoljunk, ha túl világos van
+
+A növények gyakran hajnalban vagy este igényelnek vizet.
+
+Kiegészítés: A locsolás csak akkor történhet meg, ha a fényérzékelő értéke 50 alatti.
+
+> 👨‍💻 Tipp: `if (temp_val < 50 && foil_val < 300 && touchPin == LOW)`
+
+2️⃣ 🕒 Várakozási idő a locsolás után
+
+Ne engedjük újraindítani a locsolást közvetlenül utána.
+
+Feladat: Adj hozzá egy időzítő mechanizmust, hogy a locsolás után legalább 10 másodpercet várni kell, mielőtt újraindítható lenne.
+
+> 👨‍💻 Tipp: `millis()` használata a `delay()` helyett
+
+3️⃣ 🧠 Egyszeri jóváhagyás: csak egyszer locsoljon egy érintésre
+
+Jelenleg, ha folyamatosan megnyomod az érintőt, többször is locsol.
+
+Feladat: Csak akkor locsoljon, ha az érintés változása történik: LOW → HIGH → LOW (tehát csak egy új lenyomásra).
+
+> 👨‍💻 Tipp: tárold előző érintésállapotot egy változóban
