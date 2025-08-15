@@ -213,7 +213,7 @@ Az 0802-es LCD kétféleképpen köthető be a szövegmegjelenítéshez:
 
 - 4-bites módban 🧩
 - 8-bites módban 🔗 (attól függően, hány adatvezetéket használsz)
-> Mi a 8-bites módot fogjuk használni a feladat során!
+> Mi a 4-bites módot fogjuk használni a feladat során!
 
 🧰 Szükséges hardverelemek A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
 - ✅ V4.0 Fejlesztőpanel × 1
