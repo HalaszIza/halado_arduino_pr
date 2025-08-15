@@ -294,6 +294,20 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+int relayPin = 8;
+
+void setup() {
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, HIGH); // Kezdetben relé OFF (ha LOW aktív)
+}
+
+void loop() {
+  digitalWrite(relayPin, LOW);   // Relé bekapcsol (ha LOW aktív)
+  delay(1000);
+
+  digitalWrite(relayPin, HIGH);  // Relé kikapcsol
+  delay(1000);
+}
 
 ```
 > A relé működését tesztelve kell hozzá egy sima fehér led. A teljes rendszerben ez az alkatrész már nem lesz a feladat rész csupán a működés megértése céljából tartalmazza a feladat.
