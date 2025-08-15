@@ -204,18 +204,19 @@ void loop() {
 
 ## LCD kijelző potméterrel
 
-📄 Leírás  
+📄 Leírás
 Ebben a projektben egy 0802-es LCD kijelzőt fogunk vezérelni, amelyhez a V4.0 fejlesztőpanelt használjuk. ⚙️📟
 
 Az LCD kijelző 8 oszlop és 2 sor megjelenítésére képes (8x2 karakter), és a chip működési feszültsége 4,5–5,5V között van. ⚡🔋
 
 Az 0802-es LCD kétféleképpen köthető be a szövegmegjelenítéshez:
-
 - 4-bites módban 🧩
-- 8-bites módban 🔗 (attól függően, hány adatvezetéket használsz)
+- 8-bites módban 🔗
+(attól függően, hány adatvezetéket használsz)
 > Mi a 4-bites módot fogjuk használni a feladat során!
 
-🧰 Szükséges hardverelemek A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
+🧰 Szükséges hardverelemek
+A következő alkatrészeket kell előkészítened a projekthez: 🔧🧪
 - ✅ V4.0 Fejlesztőpanel × 1
 - 📟 0802 LCD kijelző × 1
 - 🎚️ Forgatható potméter × 1 (a kontraszt beállításához)
@@ -230,9 +231,27 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
+//////////////////////////////////////////////////////////
+#include <LiquidCrystal.h>
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(11, 12, 6, 7, 4, 5);
 
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(8, 2);
+  // Print a message to the LCD.
+  lcd.setCursor(0, 0);
+  lcd.print(" Hello");
+  lcd.setCursor(0, 1);
+  lcd.print(" world!");
+}
+
+void loop() {
+}
+//////////////////////////////////////////////////////////
 ```
-
+> Fontos: A LiquidCrystal teljes és jól működése érdekében fontos letölteni a hozzá tartozó könyvtárakat is!
+> Ezt a bal oldalon a 3. ikonra rákattintva tudod megtenni. Itt a keresőbe beírva 2 könyvtárat is kihoz LiquidCrystal és Adafruit LiquidCrystal néven. Érdemes mindettőt letölteni, ha esetleg nem lenne rajta a gépen!
 ---
 # Teljes rendszer
 
