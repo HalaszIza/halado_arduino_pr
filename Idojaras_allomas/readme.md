@@ -173,7 +173,7 @@ Kapcsolási rajz:
 
 Példakód:
 ``` cpp
-int temt6000Pin = 0;
+int temt6000Pin = 1;
 
 void setup() {
   Serial.begin(9600);
