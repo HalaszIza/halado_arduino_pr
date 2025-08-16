@@ -48,7 +48,7 @@ void setup()
 }
 void loop()
 {
-  val = analogRead(0); 
+  val = analogRead(1); 
 
   if(val>700)
   {  
