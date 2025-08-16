@@ -110,7 +110,7 @@ Példakód:
 #include <dht.h>
 
 dht DHT;
-#define DHT11_PIN 2  // A szenzor adatlábja a D0-re van kötve (Arduino-n)
+#define DHT11_PIN 2  // A szenzor adatlábja a D2-re van kötve (Arduino-n)
 
 void setup() {
   Serial.begin(9600);
