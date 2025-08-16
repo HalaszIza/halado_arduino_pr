@@ -169,7 +169,7 @@ Mivel az emberi szemhez hasonlóan működik, nem reagál jól az infravörös (
 
 Kapcsolási rajz:
 
-![Kapcsolasi_rajz_3](kapcs_.png)
+![Kapcsolasi_rajz_3](kapcs_3.png)
 
 Példakód:
 ``` cpp
@@ -268,6 +268,49 @@ Példakód
 ---
 # Teljes rendszer
 
+🧩 Funkciók és feladatok:
+
+1️⃣ Alap nézet – „Napi minden”
+
+A rendszer bekapcsolásakor ez az alapértelmezett képernyő jelenik meg.  
+Kijelzőn megjelenik egy egyszerű üzenet: 
+- Napi / minden
+Célja, hogy nyugalmi állapotban is jelezze, hogy a rendszer működik.  
+
+2️⃣ DHT11 szenzor – 🌡️ Hőmérséklet és 💧 Páratartalom
+
+A második képernyőn a DHT11 hőmérséklet- és páratartalom-érzékelő adatait jelenítjük meg.  
+- A kijelző felső sorában a mért hőmérséklet (Hom: 24C),
+- az alsó sorban pedig a páratartalom (Par: 60%) látható.  
+Az értékek 1 másodpercenként frissülnek, valós időben.
+
+3️⃣ TEMT6000 + esőérzékelő – ☀️ Fényviszonyok és 🌧️ Csapadék  
+
+A harmadik képernyőn kétféle adat jelenik meg:
+- A TEMT6000 fényérzékelő alapján kiírja, hogy sötét, normál vagy túl világos van.
+- A vízérzékelő (esőérzékelő) alapján megjelenik, hogy „Eső van!” vagy „Száraz idő”.
+- A LED (13-as pin) világít, ha esőt érzékel.
+
+🔁 Képernyőváltás  
+
+A képernyők közötti váltás egy gombbal történik (pl. D2-es pin).  
+Minden gombnyomásnál a következő nézetre ugrik, majd vissza az elsőre:
+- Napi minden → DHT11 adatok → Fény + víz → vissza az elejére.  
+A rendszer debounce kezeléssel biztosítja, hogy a gombnyomás stabilan érzékelhető legyen.
+
+🔄 Frissítés
+
+A mért adatok másodpercenként frissülnek a kijelzőn, így mindig aktuális információt láthatunk.  
+A rendszer folyamatosan olvassa az érzékelők adatait, még akkor is, ha nem azok képernyője van aktívan megjelenítve.
+
+🎯 Cél
+
+A feladat célja egy többfunkciós, könnyen kezelhető, Arduino-alapú kijelzőrendszer létrehozása, amely egyszerű felhasználói interfészen keresztül mutatja a környezeti viszonyokat – mindezt egyetlen gombbal kezelhető módon.
+
+Kapcsolási rajz:
+
+![Kapcsolasi_rajz_6](kapcs_6.png)
 
 
 # Extra feladat
+
