@@ -253,17 +253,47 @@ void loop() {
 > Fontos: A LiquidCrystal teljes és jól működése érdekében fontos letölteni a hozzá tartozó könyvtárakat is!
 > Ezt a bal oldalon a 3. ikonra rákattintva tudod megtenni. Itt a keresőbe beírva 2 könyvtárat is kihoz LiquidCrystal és Adafruit LiquidCrystal néven. Érdemes mindettőt letölteni, ha esetleg nem lenne rajta a gépen!
 
-### Egy kis segítség a gomb bekötése
+# Gomb 
 
-Gomb kapcsolási rajza:
+**📘 Leírás:** Ez egy alap nyomógomb modul 🟠. Egyszerűen bedugható egy IO shield-be, így ideális az első Arduino próbálkozásokhoz 🤖.
 
-![Kapcsolasi_rajz_5](kapcs_5.png)
+**✨ Jellemzők:**
+- Széles feszültségtartomány: 3.3V – 5V 🔋
+- Könnyen felismerhető érzékelő interfészek – „A” az analóg, „D” a digitális jelekhez 📟
+- Szabványos rögzítő furat 🔩
+- Áttekinthető ikonokkal jelölve 👀
+- Magas minőségű csatlakozó 🔌
+- Egyszerűen csatlakoztatható és használható 🧩
+- Nagyméretű gomb és strapabíró gombfedél 🔘
+- Kiváló interaktív és kreatív projektekhez 🎮🎨
 
-Példakód
+**⚙️ Specifikáció:**
+- Tápfeszültség: 3.3V – 5V 🔋
+- Interfész: Digitális 📟
+- Méretek: 30 × 20 mm 📏
+- Tömeg: 4 g ⚖️
+
+**Kapcsolási rajz:**
+
+![Kappcsolási rajz_5](kapcs_5.png)
+
+**Példakód:**
 ``` cpp
-
+int led = 13; 
+int inputPin = 2;               // Connect sensor to input pin 5
+void setup() {
+  pinMode(led, OUTPUT);      
+  pinMode(inputPin, INPUT);     // set pushbutton as input
+}
+void loop(){
+  int val = digitalRead(inputPin);  // read input value
+  if (val == HIGH) {            // check if the input is HIGH
+    digitalWrite(led, HIGH);  
+  } else {
+    digitalWrite(led, LOW); 
+  }
+}
 ```
-
 
 ---
 # Teljes rendszer
