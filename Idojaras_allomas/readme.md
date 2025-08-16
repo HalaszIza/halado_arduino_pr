@@ -314,3 +314,14 @@ Kapcsolási rajz:
 
 # Extra feladat
 
+1️⃣ Automatikus képernyőváltás ⏱️
+
+🔁 Feladat: Időzítsd úgy a rendszer működését, hogy ha a felhasználó 15 másodpercig nem nyomja meg a gombot, akkor a kijelző automatikusan visszavált az alap (napi minden) képernyőre.
+
+> 🎯 Tipp: Használj `millis()`-t a legutolsó gombnyomás idejének nyomon követéséhez, és hasonlítsd össze az aktuális idővel!
+
+2️⃣ Kijelző villogtatása eső esetén 🌧️⚠️
+
+🚨 Feladat: Ha a vízérzékelő esőt érzékel, akkor a kijelző villogjon (pl. ki-be kapcsolás 0,5 másodpercenként), amíg az eső fennáll.
+
+> 🎯 Tipp: A `lcd.noDisplay()` és `lcd.display()` függvényekkel ki-be kapcsolható az LCD, időzítést pedig `millis()`-szel vezérelhetsz.
