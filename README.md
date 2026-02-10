@@ -1,6 +1,6 @@
 # halado_arduino_programozas
 
-
+![Plakat](halado_arduino.jpg)
 
 ## Alapok
 🤖 Mi az az Arduino?
