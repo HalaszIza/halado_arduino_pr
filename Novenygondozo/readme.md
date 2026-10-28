@@ -1,7 +1,8 @@
 # Növénygondozó
 
 ![Plakat](novenygondozo.png)
-
+> Linkek:    
+> https://docs.keyestudio.com/projects/KS0522/en/latest/
 ---
 ## Vízszint érzékelő
 
