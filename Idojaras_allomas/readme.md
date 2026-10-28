@@ -1,7 +1,8 @@
 # Időjárás állomás
 
 ![Plakat](idojaras_allomas.png)
-
+> Linkek:    
+> https://docs.keyestudio.com/projects/KS0522/en/latest/
 ---
 ## Vízszint érzékelő
 
