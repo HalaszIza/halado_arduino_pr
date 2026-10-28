@@ -1,7 +1,8 @@
 # Stopperóra LCD kijelzővel és RGB Leddel
 
 ![Plakat](stopper_lcd.png)
-
+> Linkek:    
+> https://docs.keyestudio.com/projects/KS0522/en/latest/
 ---
 
 ## Érintés érzékelő
