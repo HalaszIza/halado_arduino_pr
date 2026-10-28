@@ -1,7 +1,8 @@
 # OkosÓra - Egészségügyi monitor
 
 ![Plakát](okosora.png)
-
+> Linkek:    
+> https://docs.keyestudio.com/projects/KS0522/en/latest/
 ---
 ## Fehér led
 
